@@ -12,7 +12,7 @@
 
 NAME= fractol
 
-SRCS= srcs/*
+SRCS= srcs/init_img.c
 
 OBJS= $(SRCS:.c=.o)
 INCLUDES= -I libft/includes -I includes -I mlx/
