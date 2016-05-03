@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/03 12:16:55 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/03 16:13:14 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/03 16:12:15 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/03 16:12:57 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-#define FRACTOL_H
+#ifndef DEFINE_H
+# define DEFINE_H
 
-# include "struct.h"
-# include "libft.h"
-# include "mlx.h"
-# include "define.h"
-
-t_img	*init_img(t_env *env);
-t_env	*init_env(void);
+# define X_SIZE 1024
+# define Y_SIZE 850
 
 #endif

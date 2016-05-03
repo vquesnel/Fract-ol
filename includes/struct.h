@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/03 12:16:55 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/03 16:13:14 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/03 16:08:50 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/03 16:14:27 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef STRUCT_H
+# define STRUCT_H
 
-#ifndef FRACTOL_H
-#define FRACTOL_H
+typedef struct		s_img
+{
+	void			*img;
+	char			*data;
+	int				bpp;
+	int				sizeline;
+	int				endian;
+}					t_img;
 
-# include "struct.h"
-# include "libft.h"
-# include "mlx.h"
-# include "define.h"
+typedef struct		s_env
+{
+	void			*mlx;
+	void			*win;
+	t_img			*img;
+}					t_env;
 
-t_img	*init_img(t_env *env);
-t_env	*init_env(void);
+typedef struct		s_affine
+{
+	int				x;
+	int				y;
+	float			coef;
+	float			cst;
+}					t_affine;
 
 #endif
