@@ -57,5 +57,11 @@ fclean:	clean
 
 re:		fclean all
 
+norme:
+	@norminette srcs/
+	@norminette includes/
+	@norminette libft/
+
+
 .PHONY: all clean fclean re
 
