@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 12:16:55 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/04 15:51:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/04 16:27:37 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "libft.h"
 # include "mlx.h"
 # include "define.h"
-#include <stdio.h>
 
 t_img	*init_img(t_env *env);
 t_env	*init_env(char *str);
