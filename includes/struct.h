@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:08:50 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/03 16:14:27 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/04 15:24:54 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
@@ -21,11 +21,19 @@ typedef struct		s_img
 	int				endian;
 }					t_img;
 
+typedef struct		s_pram
+{
+	int				iter;
+	int				zoom;
+}					t_param;
+
 typedef struct		s_env
 {
+	char			*name;
 	void			*mlx;
 	void			*win;
 	t_img			*img;
+	t_param			*param;
 }					t_env;
 
 typedef struct		s_affine

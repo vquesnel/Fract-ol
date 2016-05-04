@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 14:26:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/03 12:16:32 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/04 11:30:23 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ t_img		*init_img(t_env *env)
 	return (img);
 }
 
-void		mlx_put_pixel_to_image(t_env *env, t_affine *c, int color)
+void		mlx_put_pixel_to_image(t_env *env, int x, int y, int color)
 {
 	int		octet;
 
 	octet = env->img->bpp / 8;
-	if (c->x > 0 && c->x < X_SIZE && c->y > 0 && c->y < Y_SIZE)
-		ft_memcpy(&env->img->data[octet * (c->x + env->img->sizeline / \
-					octet * c->y)], &color, octet);
+	if (x > 0 && x < X_SIZE && y > 0 && y < Y_SIZE)
+		ft_memcpy(&env->img->data[octet * (x + env->img->sizeline / \
+					octet * y)], &color, octet);
 }

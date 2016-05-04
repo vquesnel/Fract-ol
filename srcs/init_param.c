@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_param.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/03 15:59:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/04 15:52:32 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/04 14:51:47 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/04 15:58:24 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		main(int ac, char **av)
+t_param		*init_param(int zoom, int iter)
 {
-	t_env	*env;
+	t_param *param;
 
-	if (ac != 2)
-	{
-		ft_putstr("Usage: ./fractol [julia/mandelbrot/....]\n");
-		return (0);
-	}
-	(void)av;
-	env = init_env(av[1]);
-	init_fract(env);
-	mlx_mouse_hook(env->win, mouse_funct, env);
-	mlx_hook(env->win, 2, 3, key_funct, env);
-	mlx_loop(env->mlx);
-	return (0);
+	if (!(param = (t_param *)malloc(sizeof(t_param))))
+		return (NULL);
+	param->iter = iter;
+	param->zoom = zoom;
+	return (param);
+}
+
+t_param		*new_param(t_param hook)
+{
+	t_param		*new;
+
+	new = init_param(0, 0);
+	new->iter = hook.iter;
+	new->zoom = hook.zoom;
+	return (new);
 }
