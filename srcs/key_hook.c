@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:20:52 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/04 15:58:38 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/05 15:03:21 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ int		key_funct(int keycode, t_env *env)
 		exit(EXIT_SUCCESS);
 	hook.zoom = env->param->zoom;
 	hook.iter = env->param->iter;
+	hook.x_default = env->param->x_default;
+	hook.y_default = env->param->y_default;
+	hook.color = env->param->color;
 	if (keycode == MORE_ITER || keycode == LESS_ITER)
 		iter(keycode, env, hook);
+	if (keycode == MORE_COLOR || keycode == LESS_COLOR)
+		color(keycode, env, hook);
 	return (0);
 }

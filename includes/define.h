@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:12:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/04 14:33:34 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/05 15:05:59 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # define X2 0.6
 # define Y1 -1.2
 # define Y2 1.2
-# define X_SIZE 1024
+# define X_SIZE 850
 # define Y_SIZE 850
 
 # define X1J -1.5
@@ -30,4 +30,6 @@
 # define ESC 53
 # define LESS_ITER 78
 # define MORE_ITER 69
+# define MORE_COLOR 24
+# define LESS_COLOR 27
 #endif
