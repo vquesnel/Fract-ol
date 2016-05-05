@@ -14,7 +14,7 @@ NAME= fractol
 
 SRCS= srcs/init_img.c srcs/init_env.c srcs/init_fract.c srcs/init_mandel.c \
 	  srcs/init_julia.c srcs/main.c srcs/key_hook.c srcs/init_param.c \
-	  srcs/key_functions.c srcs/mouse_hook.c
+	  srcs/key_functions.c srcs/mouse_hook.c srcs/mouse_functions.c
 
 OBJS= $(SRCS:.c=.o)
 INCLUDES= -I libft/includes -I includes -I mlx/

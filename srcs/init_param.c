@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:51:47 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/05 15:02:21 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/05 15:54:24 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_param		*init_param(int zoom, int iter)
 	param->x_default = 0;
 	param->y_default = 0;
 	param->color = 255;
+	param->c_r = 0.285;
+	param->c_i = 0.01;
 	return (param);
 }
 
@@ -36,5 +38,8 @@ t_param		*new_param(t_param hook)
 	new->x_default = hook.x_default;
 	new->y_default = hook.y_default;
 	new->color = hook.color;
+	new->c_r = hook.c_r;
+	new->c_i = hook.c_i;
+
 	return (new);
 }
