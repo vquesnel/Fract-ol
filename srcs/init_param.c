@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:51:47 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/05 15:54:24 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/06 11:51:17 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_param		*init_param(int zoom, int iter)
 	param->zoom = zoom;
 	param->x_default = 0;
 	param->y_default = 0;
-	param->color = 255;
+	param->color = 0xFAFAFA;
 	param->c_r = 0.285;
 	param->c_i = 0.01;
 	return (param);

@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:20:52 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/05 15:53:22 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/06 17:53:29 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ int		key_funct(int keycode, t_env *env)
 		color(keycode, env, hook);
 	if (keycode == 18 | keycode == 19 || keycode == 20 || keycode == 21)
 		parameter(keycode, env, hook);
+	if (keycode == LEFT || keycode == RIGHT || keycode == UP\
+	|| keycode == DOWN)
+		moove(keycode, env, hook);
 	return (0);
 }

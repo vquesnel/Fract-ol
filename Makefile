@@ -6,7 +6,7 @@
 #    By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/26 13:35:37 by vquesnel          #+#    #+#              #
-#*   Updated: 2016/05/01 15:49:05 by vquesnel         ###   ########.fr       *#
+#*   Updated: 2016/05/06 12:09:48 by vquesnel         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME= fractol
 
 SRCS= srcs/init_img.c srcs/init_env.c srcs/init_fract.c srcs/init_mandel.c \
 	  srcs/init_julia.c srcs/main.c srcs/key_hook.c srcs/init_param.c \
-	  srcs/key_functions.c srcs/mouse_hook.c srcs/mouse_functions.c
+	  srcs/key_functions.c srcs/mouse_hook.c srcs/mouse_functions.c \
+	  srcs/init_sierpinski.c
 
 OBJS= $(SRCS:.c=.o)
 INCLUDES= -I libft/includes -I includes -I mlx/

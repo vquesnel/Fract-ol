@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:16:43 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/04 15:24:20 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/06 12:11:08 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ int		init_fract(t_env *env)
 		init_julia(env);
 		return (TRUE);
 	}
-	if (!(ft_strcmp(env->name, "Mandelbrot")))
+	if (!(ft_strcmp(env->name, "mandelbrot")))
 	{
 		init_mandel(env);
 		return (TRUE);
 	}
-	//	else if (!(ft_strcmp(str, "Modulo")))
-	//		init_modul(env);
+	if (!(ft_strcmp(env->name, "sierpinski")))
+	{
+		init_sierpinski(env);
+		return (TRUE);
+	}
 	else
 		ft_error("usage: ./fractol [Mandelbrot, julia, ...]");
 	return (FALSE);

@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 13:29:40 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/05 16:15:57 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/06 17:59:52 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	init_julia(t_env *env)
 {
-	long double		c_r;
-	long double		c_i;
 	long double		z_r;
 	long double		z_i;
 	int				i;
@@ -30,24 +28,21 @@ void	init_julia(t_env *env)
 		y = 0;
 		while (y < Y_SIZE)
 		{
-			c_r = env->param->c_r;
-			c_i = env->param->c_i;
-			z_r = (x - X_SIZE / 2) / (100 + X1J);
-			z_i = (y - Y_SIZE / 2) / (100 + Y1J);
-			i = 0;
-			while ((z_r * z_r + z_i * z_i) < 4 && i < env->param->iter)
+			z_r = (x - X_SIZE / 2) / (env->param->zoom + X1J);
+			z_i = (y - Y_SIZE / 2) / (env->param->zoom + Y1J);
+			i = -1;
+			while ((z_r * z_r + z_i * z_i) < 4 && i++ < env->param->iter)
 			{
 				tmp = z_r;
-				z_r = z_r * z_r - z_i * z_i + c_r;
-				z_i = 2 * z_i * tmp + c_i;
-				i++;
+				z_r = z_r * z_r - z_i * z_i + env->param->c_r;
+				z_i = 2 * z_i * tmp +  env->param->c_i;
 			}
 			if (i == env->param->iter)
-				mlx_put_pixel_to_image(env, x, y, 0);
+				mlx_put_pixel_to_image(env, x + env->param->x_default, y + env->param->y_default, 255);
 			else
 			{
 				color = i * env->param->color / env->param->iter;
-				mlx_put_pixel_to_image(env, x , y , color);
+				mlx_put_pixel_to_image(env, x + env->param->x_default, y + env->param->y_default, color);
 			}
 			y++;
 		}
