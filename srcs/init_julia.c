@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 13:29:40 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/06 17:59:52 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/09 14:31:33 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	init_julia(t_env *env)
 				mlx_put_pixel_to_image(env, x + env->param->x_default, y + env->param->y_default, 255);
 			else
 			{
-				color = i * env->param->color / env->param->iter;
-				mlx_put_pixel_to_image(env, x + env->param->x_default, y + env->param->y_default, color);
+				color = i * env->param->color;
+				mlx_put_pixel_to_image(env, x + env->param->x_default, y  +env->param->y_default, color);
 			}
 			y++;
 		}
