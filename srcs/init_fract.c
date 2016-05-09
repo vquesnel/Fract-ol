@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:16:43 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/06 12:11:08 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/09 15:00:11 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int		init_fract(t_env *env)
 	if (!(ft_strcmp(env->name, "sierpinski")))
 	{
 		init_sierpinski(env);
+		return (TRUE);
+	}
+	if (!(ft_strcmp(env->name, "b_ship")))
+	{
+		init_burningship(env);
 		return (TRUE);
 	}
 	else

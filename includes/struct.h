@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:08:50 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/05 15:47:19 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/09 14:55:10 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef STRUCT_H
@@ -21,7 +21,7 @@ typedef struct		s_img
 	int				endian;
 }					t_img;
 
-typedef struct		s_pram
+typedef struct		s_param
 {
 	int				iter;
 	int				zoom;
