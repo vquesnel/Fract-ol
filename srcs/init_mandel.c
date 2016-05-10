@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 11:22:25 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/09 14:30:14 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/10 15:04:11 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	init_mandel(t_env *env)
 				i++;
 			}
 			if (i == env->param->iter)
-				mlx_put_pixel_to_image(env, x + env->param->x_default, y + env->param->y_default, 0xFFFFFF);
+				mlx_put_pixel_to_image(env, x + env->param->x_default, y + env->param->y_default, 0);
 			else
 			{
 				color = i * env->param->color;
