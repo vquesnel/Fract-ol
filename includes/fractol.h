@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 00:40:51 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 00:57:02 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ void	moove(int keycode, t_env *env);
 void	color(int keycode, t_env *env);
 void	iter(int keycode, t_env *env);
 void	theme(int keycode, t_env *env);
+void	origin(int keycode, t_env *env);
 
 #endif

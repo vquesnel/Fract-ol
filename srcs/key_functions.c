@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 00:35:09 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 01:03:54 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,17 @@ void		moove(int keycode, t_env *env)
 		env->p->y1 += 0.0001;
 	else if (keycode == UP)
 		env->p->y1 -= 0.0001;
+}
+
+void	origin(int keycode, t_env *env)
+{
+
+	if (keycode == ORIGIN)
+	{
+		if (!ft_strcmp(env->name, "julia") || \
+		!ft_strcmp(env->name, "chameleon") || !ft_strcmp(env->name, "sword"))
+			env->p = init_julia();
+		else
+			env->p = init_mandelbrot();
+	}
 }
