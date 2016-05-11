@@ -3,51 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/03 16:08:50 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/09 15:42:38 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/11 10:53:26 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/11 14:48:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
-# define STRUCT_H
+#define STRUCT_H
 
-typedef struct		s_img
+typedef struct	s_img
 {
-	void			*img;
-	char			*data;
-	int				bpp;
-	int				sizeline;
-	int				endian;
-}					t_img;
+	void		*img;
+	char		*data;
+	int			bpp;
+	int			sizeline;
+	int			endian;
+}				t_img;
 
-typedef struct		s_param
+typedef struct	s_param
 {
-	int				iter;
-	int				zoom;
-	float			x_default;
-	float			y_default;
-	int				color;
-	long double		c_r;
-	long double		c_i;
-}					t_param;
+	int			iter;
+	int			motion;
+	double		x1;
+	double		x2;
+	double		y1;
+	double		y2;
+	double		zoom;
+	double		c_r;
+	double		c_i;
+	double		z_r;
+	double		z_i;
+	int			color;
+}				t_param;
 
-typedef struct		s_env
+typedef struct	s_env
 {
-	char			*name;
-	void			*mlx;
-	void			*win;
-	t_img			*img;
-	t_param			*param;
-}					t_env;
-
-typedef struct		s_affine
-{
-	int				x;
-	int				y;
-	float			coef;
-	float			cst;
-}					t_affine;
+	char		*name;
+	void		*mlx;
+	void		*win;
+	t_img		*img;
+	t_param		*p;
+}				t_env;
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/03 12:16:55 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/09 15:01:53 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/11 17:09:11 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,29 @@
 #define FRACTOL_H
 
 # include "struct.h"
+# include "define.h"
 # include "libft.h"
 # include "mlx.h"
-# include "define.h"
 # include <stdio.h>
 # include <math.h>
+
 t_img	*init_img(t_env *env);
 t_env	*init_env(char *str);
-int		init_fract(t_env *env);
-void	init_mandel(t_env *env);
-void	init_julia(t_env *env);
-void	init_sierpinski(t_env *env);
-void	init_burningship(t_env *env);
+void	select_fractals(t_env *env);
+t_param	*init_mandelbrot(void);
+t_param	*init_julia(void);
+t_param	*init_bship(void);
 void	mlx_put_pixel_to_image(t_env *env, int x, int y, int color);
+void	draw_julia(t_env *env);
+void	draw_mandelbrot(t_env *env);
+void	draw_bship(t_env *env);
+
+int		mouse_hook(int button, int x, int y, t_env *env);
+
 int		key_funct(int keycode, t_env *env);
-int		mouse_funct(int mousecode, int x, int y, t_env *env);
-t_param	*init_param(int zoom, int iter);
-t_param	*new_param(t_param hook);
-void	iter(int keycode, t_env *env, t_param hook);
-void	color(int keycode, t_env *env, t_param hook);
-void	parameter(int keycode, t_env *env, t_param hook);
-void	zoom(int mousecode, t_env *env, t_param hook);
-void		moove(int keycode, t_env *env, t_param hook);
+void	moove(int keycode, t_env *env);
+void	color(int keycode, t_env *env);
+void	iter(int keycode, t_env *env);
+void	theme(int keycode, t_env *env);
 
 #endif

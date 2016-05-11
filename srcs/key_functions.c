@@ -6,56 +6,51 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/09 14:29:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/11 17:41:13 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void	iter(int keycode, t_env *env, t_param hook)
+void	iter(int keycode, t_env *env)
 {
 	if (keycode == MORE_ITER)
-		hook.iter++;
-	if (keycode == LESS_ITER && hook.iter > 1)
-		hook.iter--;
-	env->param = new_param(hook);
-	init_fract(env);
+		env->p->iter++;
+	if (keycode == LESS_ITER && env->p->iter > 1)
+		env->p->iter--;
 }
 
-void	color(int keycode, t_env *env, t_param hook)
+void	theme(int keycode, t_env *env)
 {
-	if (keycode == MORE_COLOR && hook.color < 2147483391)
-		hook.color += 256;
-	if (keycode == LESS_COLOR && hook.color > 256)
-		hook.color -= 256;
-	env->param = new_param(hook);
-	init_fract(env);
+	if (keycode == T1)
+		env->p->color = 0xFFD7A5;
+	if (keycode == T2)
+		env->p->color = 0x00FF43;
+	if (keycode == T3)
+		env->p->color = 0x0000FF;
+	if (keycode == T4)
+		env->p->color = 0xFF0036;
+	if (keycode == T5)
+		env->p->color = 0x0096DF;
 }
 
-void	parameter(int keycode, t_env *env, t_param hook)
+void	color(int keycode, t_env *env)
 {
-	if (keycode == 18 && hook.c_r < 1.25)
-		hook.c_r += 0.01;
-	if (keycode == 19 && hook.c_r > -1.249)
-		hook.c_r -= 0.01;
-	if (keycode == 20 && hook.c_i < 1.249)
-		hook.c_i += 0.01;
-	if (keycode == 21 && hook.c_i > -1.249)
-		hook.c_i -= 0.01;
-	env->param = new_param(hook);
-	init_fract(env);
+	if (keycode == MORE_COLOR && env->p->color < 2147483391)
+		env->p->color += 1024;
+	if (keycode == LESS_COLOR && env->p->color > 256)
+		env->p->color -= 1024;
+	printf("color == %X\n", env->p->color);
 }
 
-void		moove(int keycode, t_env *env, t_param hook)
+void		moove(int keycode, t_env *env)
 {
 	if (keycode == LEFT)
-		hook.x_default -= 2;
+		env->p->x1 += 0.0001;
 	else if (keycode == RIGHT)
-		hook.x_default += 2;
+		env->p->x1 -= 0.0001;
 	else if (keycode == DOWN)
-		hook.y_default -= 2;
+		env->p->y1 += 0.0001;
 	else if (keycode == UP)
-		hook.y_default += 2;
-	env->param = new_param(hook);
-	init_fract(env);
+		env->p->y1 -= 0.0001;
 }

@@ -3,29 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_hook.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/04 15:46:01 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/06 17:42:11 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/11 17:17:00 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		mouse_funct(int button, int x, int y, t_env *env)
+int		mouse_hook(int button, int x, int y, t_env *env)
 {
-	t_param		hook;
+	double x_real;
+	double	y_real;
 
-	hook.zoom = env->param->zoom;
-	hook.iter = env->param->iter;
-	hook.x_default = env->param->x_default;
-	hook.y_default = env->param->y_default;
-	hook.color = env->param->color;
-	hook.c_r = env->param->c_r;
-	hook.c_i = env->param->c_i;
-	(void)x;
-	(void)y;
-	if (button == 5 || button == 4)
-		zoom(button, env, hook);
+	if (x > 0 && y > 0)
+	{
+		x_real = (x / env->p->zoom) + env->p->x1;
+		y_real = (y / env->p->zoom) + env->p->y1;
+		if ( button == 4)
+		{
+			env->p->zoom *= 1.1;
+			env->p->x1 = x_real - (x / env->p->zoom);
+			env->p->y1 = y_real - (y / env->p->zoom);
+		}
+		if (button == 5)
+		{
+			env->p->zoom /= 1.1;
+			env->p->x1 = x_real - (x / env->p->zoom);
+			env->p->y1 = y_real - (y / env->p->zoom);
+		}
+	}
+	mlx_clear_window(env->mlx, env->win);
+	select_fractals(env);
 	return (0);
 }
