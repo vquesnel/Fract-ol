@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:20:52 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/11 17:16:18 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 00:17:48 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		key_funct(int keycode, t_env *env)
 	if ( keycode == T1 || keycode == T2 || keycode == T3 || keycode == T4 || \
 	keycode == T5)
 		theme(keycode, env);
+	mlx_clear_window(env->mlx, env->win);
 	select_fractals(env);
 	return (0);
 }

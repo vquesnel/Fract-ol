@@ -6,14 +6,16 @@
 #    By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/26 13:35:37 by vquesnel          #+#    #+#              #
-#*   Updated: 2016/05/11 16:17:07 by vquesnel         ###   ########.fr       *#
+#*   Updated: 2016/05/11 20:42:30 by vquesnel         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 NAME= fractol
 
-SRCS= srcs/init_img.c srcs/init_env.c srcs/select_fractals.c srcs/main.c srcs/init_params.c \
-	 srcs/draw_fractals.c srcs/mouse_hook.c srcs/key_functions.c srcs/key_hook.c
+SRCS= srcs/init_img.c srcs/init_env.c srcs/select_fractals.c srcs/main.c \
+	 srcs/init_params.c srcs/draw_fractals.c srcs/mouse_hook.c \
+	 srcs/key_functions.c srcs/key_hook.c srcs/draw_fractals2.c \
+
 OBJS= $(SRCS:.c=.o)
 INCLUDES= -I libft/includes -I includes -I mlx/
 LIBS= -L libft/ -lft -L mlx/ -lmlx -lm

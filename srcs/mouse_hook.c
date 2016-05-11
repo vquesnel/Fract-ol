@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/11 17:17:00 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 00:33:05 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,35 @@ int		mouse_hook(int button, int x, int y, t_env *env)
 			env->p->x1 = x_real - (x / env->p->zoom);
 			env->p->y1 = y_real - (y / env->p->zoom);
 		}
+		if (button == 1)
+			env->p->motion++;
 	}
 	mlx_clear_window(env->mlx, env->win);
 	select_fractals(env);
+	return (0);
+}
+
+int		motion_juliaandco(int x, int y, t_env *env)
+{
+	if (!ft_strcmp(env->name, "julia") || !ft_strcmp(env->name, "chameleon") \
+			|| !ft_strcmp(env->name, "sword"))
+	{
+		if (env->p->motion % 2)
+		{
+			if (x > 0 && x < X_SIZE && y > 0 && y < Y_SIZE)
+			{
+				if (x < X_SIZE / 2  && y < Y_SIZE / 2)
+					env->p->c_r += 0.01;
+				if (x > X_SIZE / 2  && y < Y_SIZE / 2)
+					env->p->c_r -= 0.01;
+				if (x < X_SIZE / 2  && y > Y_SIZE / 2)
+					env->p->c_i += 0.01;
+				if (x > X_SIZE / 2  && y > Y_SIZE / 2)
+					env->p->c_i -= 0.01;
+			}
+		}
+		mlx_clear_window(env->mlx, env->win);
+		select_fractals(env);
+	}
 	return (0);
 }

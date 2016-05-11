@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/11 17:41:13 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 00:35:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,23 @@ void	iter(int keycode, t_env *env)
 void	theme(int keycode, t_env *env)
 {
 	if (keycode == T1)
-		env->p->color = 0xFFD7A5;
+		env->p->col = 0xFFD7A5;
 	if (keycode == T2)
-		env->p->color = 0x00FF43;
+		env->p->col = 0x00FF43;
 	if (keycode == T3)
-		env->p->color = 0x0000FF;
+		env->p->col = 0x090893;
 	if (keycode == T4)
-		env->p->color = 0xFF0036;
+		env->p->col = 0xFF0036;
 	if (keycode == T5)
-		env->p->color = 0x0096DF;
+		env->p->col = 0x0096DF;
 }
 
 void	color(int keycode, t_env *env)
 {
-	if (keycode == MORE_COLOR && env->p->color < 2147483391)
-		env->p->color += 1024;
-	if (keycode == LESS_COLOR && env->p->color > 256)
-		env->p->color -= 1024;
-	printf("color == %X\n", env->p->color);
+	if (keycode == MORE_COLOR && env->p->col < 2147483391)
+		env->p->col += 2030;
+	if (keycode == LESS_COLOR && env->p->col > 256)
+		env->p->col -= 2030;
 }
 
 void		moove(int keycode, t_env *env)

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:53:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/11 14:48:09 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/11 21:35:14 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ typedef struct	s_param
 	double		c_i;
 	double		z_r;
 	double		z_i;
-	int			color;
+	int			col;
+	int			x;
+	int			y;
+	double		tmp;
+	int			i;
 }				t_param;
 
 typedef struct	s_env

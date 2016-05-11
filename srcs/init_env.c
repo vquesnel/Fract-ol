@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/26 15:03:50 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/11 14:59:39 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/11 20:31:52 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ t_env	*init_env(char *str)
 	env->mlx = mlx_init();
 	env->win = mlx_new_window(env->mlx, X_SIZE, Y_SIZE, env->name);
 	env->img = init_img(env);
-	if (!(ft_strcmp(env->name, "julia")))
+	if (!ft_strcmp(env->name, "julia") || !ft_strcmp(env->name, "sword") || \
+	!ft_strcmp(env->name, "chameleon"))
 			env->p = init_julia();
-	else if (!(ft_strcmp(env->name, "mandelbrot")))
+	else if (!(ft_strcmp(env->name, "mandelbrot")) || \
+	!ft_strcmp(env->name, "bship") || !ft_strcmp(env->name, "tricorn"))
 			env->p = init_mandelbrot();
-	else if (!(ft_strcmp(env->name, "bship")))
-		env->p = init_bship();
 	return (env);
 }
