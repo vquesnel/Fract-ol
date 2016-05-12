@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 14:26:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 00:24:44 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:20:29 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		pixel_to_image(t_env *env, int x, int y, int color)
 					octet * y)], &color, octet);
 }
 
-void	set_pixel_to_image(t_env *e)
+void		set_pixel_to_image(t_env *e)
 {
 	if (e->p->i == e->p->iter)
 		pixel_to_image(e, e->p->x, e->p->y, 0);

@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 17:11:29 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:05:00 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:20:16 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char			*ft_itoa(int n)
 
 	len = ft_int_len(n);
 	str = (char *)malloc(sizeof(char) * len + 1);
-	if (n == INT_MIN)
+	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	if (n == 0 || !str)
 		return (ft_strdup("0"));
