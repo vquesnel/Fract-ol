@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:12:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 00:56:35 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:30:10 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 
 # define TRUE 1
 # define FALSE 0
-# define X_SIZE 850
+# define X_SIZE 1024
 # define Y_SIZE 850
+
+/*
+** KEYCODE
+*/
 
 # define ESC 53
 # define LESS_ITER 0
@@ -33,5 +37,14 @@
 # define T4 21
 # define T5 23
 # define ORIGIN 50
+# define SPACE 49
+
+/*
+** MOUSECODE
+*/
+
+# define LEFTCLICK 1
+# define ZOOMIN 4
+# define ZOOMOUT 5
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 00:57:02 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 10:32:18 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
+# include <stdio.h>
 
 /*
 ** INIT_LIST HANDLING
@@ -65,5 +66,11 @@ void	color(int keycode, t_env *env);
 void	iter(int keycode, t_env *env);
 void	theme(int keycode, t_env *env);
 void	origin(int keycode, t_env *env);
+int		menu(t_env *env);
+void	left_wing(t_env *env);
+void	right_wing(t_env *env);
+void	body(t_env *env);
+
+
 
 #endif
