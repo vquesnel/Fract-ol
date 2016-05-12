@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 16:55:13 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:33:48 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 19:01:28 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ void	left_wing(t_env *env)
 	x = 148;
 	y = 646;
 	while (x++ < 383)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	while (y++ < 781)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	x = 148;
 	y = 646;
 	while (y++ < 781)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	while (x++ < 383)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 }
 
 void	right_wing(t_env *env)
@@ -39,15 +39,15 @@ void	right_wing(t_env *env)
 	x = 642;
 	y = 646;
 	while (x++ < 890)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	while (y++ < 781)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	x = 642;
 	y = 646;
 	while (y++ < 781)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	while (x++ < 890)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 }
 
 void	body(t_env *env)
@@ -58,13 +58,13 @@ void	body(t_env *env)
 	x = 384;
 	y = 592;
 	while (x++ <= 640)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	while (y++ <= 831)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	x = 384;
 	y = 592;
 	while (y++ <= 831)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 	while (x++ <= 640)
-		mlx_pixel_put(env->mlx, env->win, x, y, 0xFFFFFF);
+		mlx_pixel_put(env->mlx, env->win, x, y, 0xFF0000);
 }
