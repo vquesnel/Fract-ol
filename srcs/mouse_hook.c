@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:19:49 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:09:48 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int		mouse_hook(int button, int x, int y, t_env *env)
 {
-	double x_real;
+	double	x_real;
 	double	y_real;
 
 	if (x > 0 && y > 0)
 	{
 		x_real = (x / env->p->zoom) + env->p->x1;
 		y_real = (y / env->p->zoom) + env->p->y1;
-		if ( button == ZOOMIN)
+		if (button == ZOOMIN)
 		{
 			env->p->zoom *= 1.1;
 			env->p->x1 = x_real - (x / env->p->zoom);
@@ -50,13 +50,13 @@ int		motion_juliaandco(int x, int y, t_env *env)
 		{
 			if (x > 0 && x < X_SIZE && y > 0 && y < Y_SIZE)
 			{
-				if (x < X_SIZE / 2  && y < Y_SIZE / 2)
+				if (x < X_SIZE / 2 && y < Y_SIZE / 2)
 					env->p->c_r += 0.01;
-				if (x > X_SIZE / 2  && y < Y_SIZE / 2)
+				if (x > X_SIZE / 2 && y < Y_SIZE / 2)
 					env->p->c_r -= 0.01;
-				if (x < X_SIZE / 2  && y > Y_SIZE / 2)
+				if (x < X_SIZE / 2 && y > Y_SIZE / 2)
 					env->p->c_i += 0.01;
-				if (x > X_SIZE / 2  && y > Y_SIZE / 2)
+				if (x > X_SIZE / 2 && y > Y_SIZE / 2)
 					env->p->c_i -= 0.01;
 			}
 		}

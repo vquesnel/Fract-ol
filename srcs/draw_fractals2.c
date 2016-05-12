@@ -6,17 +6,17 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 20:17:53 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 00:16:50 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:08:48 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-void			draw_julia(t_env *e)
+void		draw_julia(t_env *e)
 {
 	while (e->p->x < X_SIZE)
 	{
-		e->p->y= 0;
+		e->p->y = 0;
 		while (e->p->y < Y_SIZE)
 		{
 			e->p->z_r = e->p->x / e->p->zoom + e->p->x1;
@@ -43,7 +43,7 @@ void		draw_chameleon(t_env *e)
 {
 	while (e->p->x < X_SIZE)
 	{
-		e->p->y= 0;
+		e->p->y = 0;
 		while (e->p->y < Y_SIZE)
 		{
 			e->p->z_r = e->p->x / e->p->zoom + e->p->x1;
@@ -70,7 +70,7 @@ void		draw_sword(t_env *e)
 {
 	while (e->p->x < X_SIZE)
 	{
-		e->p->y= 0;
+		e->p->y = 0;
 		while (e->p->y < Y_SIZE)
 		{
 			e->p->z_r = e->p->x / e->p->zoom + e->p->x1;

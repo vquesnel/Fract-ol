@@ -6,12 +6,12 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:53:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:00:14 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:10:25 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
-#define STRUCT_H
+# define STRUCT_H
 
 typedef struct	s_img
 {
@@ -49,7 +49,6 @@ typedef struct	s_env
 	void		*win;
 	t_img		*img;
 	t_param		*p;
-	struct s_env *next;
 }				t_env;
 
 #endif

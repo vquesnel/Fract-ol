@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:06:17 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:46:02 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:07:29 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ t_param		*init_mandelbrot(void)
 	p->y = 0;
 	return (p);
 }
-

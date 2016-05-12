@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:37:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:08:17 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	color(int keycode, t_env *env)
 	select_fractals(env);
 }
 
-void		moove(int keycode, t_env *env)
+void	moove(int keycode, t_env *env)
 {
 	if (keycode == LEFT)
 		env->p->x1 += 0.0001;
@@ -64,11 +64,11 @@ void		moove(int keycode, t_env *env)
 
 void	origin(int keycode, t_env *env)
 {
-
 	if (keycode == ORIGIN)
 	{
 		if (!ft_strcmp(env->name, "julia") || \
-		!ft_strcmp(env->name, "chameleon") || !ft_strcmp(env->name, "sword"))
+				!ft_strcmp(env->name, "chameleon") ||\
+				!ft_strcmp(env->name, "sword"))
 			env->p = init_julia();
 		else
 			env->p = init_mandelbrot();

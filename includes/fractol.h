@@ -6,12 +6,12 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:32:18 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 14:10:44 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
-#define FRACTOL_H
+# define FRACTOL_H
 
 # include "struct.h"
 # include "define.h"
@@ -70,7 +70,5 @@ int		menu(t_env *env);
 void	left_wing(t_env *env);
 void	right_wing(t_env *env);
 void	body(t_env *env);
-
-
 
 #endif
