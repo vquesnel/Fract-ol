@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/26 15:03:50 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/11 20:31:52 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 13:59:36 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_env	*new_env(void)
 	env->win = NULL;
 	env->img = NULL;
 	env->p = NULL;
+	env->next = NULL;
 	return (env);
 }
 

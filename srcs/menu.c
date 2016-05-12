@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/28 16:55:05 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:46:24 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/12 13:33:17 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static void	signature(void *mlx, void *win)
 {
-	mlx_string_put(mlx, win, 404, 612, 0xAEECFE, "XXXXXX XXXXX   XXXXXX");
-	mlx_string_put(mlx, win, 404, 622, 0xAEECFE, "X      X    X  X");
-	mlx_string_put(mlx, win, 404, 632, 0xAEECFE, "X      X     X X");
-	mlx_string_put(mlx, win, 404, 642, 0xAEECFE, "XXXXX  X     X XXXXX");
-	mlx_string_put(mlx, win, 404, 652, 0xAEECFE, "X      X    X  X");
-	mlx_string_put(mlx, win, 404, 662, 0xAEECFE, "X      XXXXX   X");
+	mlx_string_put(mlx, win, 390, 612, 0xAEECFE, "XXXX                      ");
+	mlx_string_put(mlx, win, 390, 622, 0xAEECFE, "X                         ");
+	mlx_string_put(mlx, win, 390, 632, 0xAEECFE, "XX             X      X   ");
+	mlx_string_put(mlx, win, 390, 642, 0xAEECFE, "X XXX XXX  XXX XX XXX X   ");
+	mlx_string_put(mlx, win, 390, 652, 0xAEECFE, "X X   X X  X   X  X X X   ");
+	mlx_string_put(mlx, win, 390, 662, 0xAEECFE, "X X   XXXX XXX XX XXX XXX ");
 	mlx_string_put(mlx, win, 404, 682, 0xAEECFE, "X   X XXXX X   X X  X");
 	mlx_string_put(mlx, win, 404, 692, 0xAEECFE, "XX XX X    XX  X X  X");
 	mlx_string_put(mlx, win, 404, 702, 0xAEECFE, "X X X XXXX X X X X  X");
