@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:53:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:10:25 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/13 13:41:16 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct	s_param
 	double		x2;
 	double		y1;
 	double		y2;
-	double		zoom;
+	long double	zoom;
 	double		c_r;
 	double		c_i;
 	double		z_r;
