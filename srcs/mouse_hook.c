@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:09:48 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/14 15:15:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		mouse_hook(int button, int x, int y, t_env *env)
 		if (button == LEFTCLICK)
 			env->p->motion++;
 	}
+	printf("zoom = %Lf\n", env->p->zoom);
 	mlx_clear_window(env->mlx, env->win);
 	select_fractals(env);
 	return (0);

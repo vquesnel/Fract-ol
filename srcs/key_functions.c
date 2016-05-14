@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:08:17 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/14 15:37:59 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	iter(int keycode, t_env *env)
 {
 	if (keycode == MORE_ITER)
 		env->p->iter++;
-	if (keycode == LESS_ITER && env->p->iter > 1)
+	if (keycode == LESS_ITER && env->p->iter > 2)
 		env->p->iter--;
 	mlx_clear_window(env->mlx, env->win);
 	select_fractals(env);
@@ -44,20 +44,6 @@ void	color(int keycode, t_env *env)
 		env->p->col += 2030;
 	if (keycode == LESS_COLOR && env->p->col > 256)
 		env->p->col -= 2030;
-	mlx_clear_window(env->mlx, env->win);
-	select_fractals(env);
-}
-
-void	moove(int keycode, t_env *env)
-{
-	if (keycode == LEFT)
-		env->p->x1 += 0.0001;
-	else if (keycode == RIGHT)
-		env->p->x1 -= 0.0001;
-	else if (keycode == DOWN)
-		env->p->y1 += 0.0001;
-	else if (keycode == UP)
-		env->p->y1 -= 0.0001;
 	mlx_clear_window(env->mlx, env->win);
 	select_fractals(env);
 }

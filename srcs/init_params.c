@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:06:17 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:07:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/14 15:31:50 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_param		*init_julia(void)
 	p->zoom = 300;
 	p->c_r = 0.285;
 	p->c_i = 0.01;
-	p->col = 0xef0b0b;
+	p->col = 0xFFFFFF;
 	p->x = 0;
 	p->y = 0;
 	return (p);
