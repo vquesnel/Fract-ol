@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:20:52 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/14 15:38:01 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 00:13:28 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ static double	modify_moove(t_env *env)
 		i = 0.02;
 	if (env->p->zoom > 1000 && env->p->zoom <= 10000)
 		i = 0.002;
-	if (env->p->zoom > 10000)
+	if (env->p->zoom > 10000 && env->p->zoom <= 100000)
 		i = 0.0002;
+	if (env->p->zoom > 100000)
+		i = 0.00002;
 	return (i);
 }
 
@@ -40,8 +42,6 @@ void	moove(int keycode, t_env *env)
 		env->p->y1 += i;
 	else if (keycode == UP)
 		env->p->y1 -= i;
-	mlx_clear_window(env->mlx, env->win);
-	select_fractals(env);
 }
 
 int		key_funct(int keycode, t_env *env)
@@ -64,5 +64,7 @@ int		key_funct(int keycode, t_env *env)
 		origin(keycode, env);
 	if (keycode == SPACE)
 		menu(env);
+	mlx_clear_window(env->mlx, env->win);
+	select_fractals(env);
 	return (0);
 }

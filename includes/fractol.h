@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:10:44 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 00:12:32 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
-# include <stdio.h>
 
 /*
-** INIT_LIST HANDLING
+** INITILALIZE LIST FUNCTIONS
 */
 
 t_img	*init_img(t_env *env);
@@ -31,7 +30,7 @@ t_param	*init_julia(void);
 t_param	*init_bship(void);
 
 /*
-** IMAGE HANDLING
+** IMAGES FUNCTIONS
 */
 
 void	pixel_to_image(t_env *env, int x, int y, int color);
@@ -50,14 +49,14 @@ void	draw_chameleon(t_env *e);
 void	draw_tricorn(t_env *e);
 
 /*
-** MOUSE HOOK HANDLING
+** MOUSE HOOK FUNCTIONS
 */
 
 int		mouse_hook(int button, int x, int y, t_env *env);
 int		motion_juliaandco(int x, int y, t_env *env);
 
 /*
-** KEY HOOK HANDLING
+** KEY HOOK FUNCTIONS
 */
 
 int		key_funct(int keycode, t_env *env);
