@@ -67,5 +67,3 @@ norme:
 
 
 .PHONY: all clean fclean re
-salut jb
-
