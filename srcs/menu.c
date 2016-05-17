@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 14:54:24 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 16:51:03 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ static void	title(t_env *env)
 static void	commands(t_env *env)
 {
 	char	*iter;
+	char	*zoom;
 
 	iter = ft_itoa(env->p->iter);
+	zoom = ft_itoa(env->p->zoom);
 	mlx_string_put(env->mlx, env->win, 815, 70, 0x165AA4, "Moove   :  Arrows");
 	mlx_string_put(env->mlx, env->win, 815, 110, 0x165AA4, "Iter +  :    s  ");
 	mlx_string_put(env->mlx, env->win, 815, 150, 0x165AA4, "Iter -  :    a  ");
@@ -52,6 +54,8 @@ static void	commands(t_env *env)
 		mlx_string_put(env->mlx, env->win, 945, 510, 0x165AA4, "off");
 	else
 		mlx_string_put(env->mlx, env->win, 945, 510, 0x165AA4, "on");
+	mlx_string_put(env->mlx, env->win, 815, 550, 0x165AA4, "Zoom    :        ");
+	mlx_string_put(env->mlx, env->win, 945, 550, 0x165AA4, zoom);
 }
 
 void		menu(t_env *env)
