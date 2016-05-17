@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:53:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 15:00:33 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 15:17:59 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void		select_fractals(t_env *env)
 {
-	printf("color = %X\n", env->p->col);
 	if (ft_strcmp(env->name, "julia") == 0)
 		draw_julia(env);
 	else if (ft_strcmp(env->name, "mandelbrot") == 0)
