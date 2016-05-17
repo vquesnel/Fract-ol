@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 00:13:27 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 15:11:49 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ void	iter(int keycode, t_env *env)
 void	theme(int keycode, t_env *env)
 {
 	if (keycode == T1)
-		env->p->col = 0xFFD7A5;
+		env->p->col = 0xFFFFFF;
 	if (keycode == T2)
-		env->p->col = 0x00FF43;
+		env->p->col = 0xEF12F9;
 	if (keycode == T3)
-		env->p->col = 0x090893;
+		env->p->col = 0x0000FF;
 	if (keycode == T4)
-		env->p->col = 0xFF0036;
+		env->p->col = 0x10007ED;
 	if (keycode == T5)
-		env->p->col = 0x0096DF;
+		env->p->col = 0x10017C9;
 }
 
 void	color(int keycode, t_env *env)

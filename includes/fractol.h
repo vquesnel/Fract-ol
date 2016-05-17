@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 13:49:52 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 15:00:46 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
+#include <stdio.h>
 
 /*
 ** INITILALIZE LIST FUNCTIONS

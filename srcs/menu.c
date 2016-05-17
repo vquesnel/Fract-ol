@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 13:49:36 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 14:54:24 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,19 @@ static void	commands(t_env *env)
 	mlx_string_put(env->mlx, env->win, 815, 70, 0x165AA4, "Moove   :  Arrows");
 	mlx_string_put(env->mlx, env->win, 815, 110, 0x165AA4, "Iter +  :    s  ");
 	mlx_string_put(env->mlx, env->win, 815, 150, 0x165AA4, "Iter -  :    a  ");
-	mlx_string_put(env->mlx, env->win, 815, 190, 0x165AA4, "Reset   :   tild ");
+	mlx_string_put(env->mlx, env->win, 815, 190, 0x165AA4, "Reset   :   Tild ");
 	mlx_string_put(env->mlx, env->win, 815, 230, 0x165AA4, "Themes  :  1 to 5");
 	mlx_string_put(env->mlx, env->win, 815, 270, 0x165AA4, "Color + :    +  ");
 	mlx_string_put(env->mlx, env->win, 815, 310, 0x165AA4, "Color - :    -  ");
-	mlx_string_put(env->mlx, env->win, 813, 380, 0x165AA4, "    PARAMETERS   ");
-	mlx_string_put(env->mlx, env->win, 815, 430, 0x165AA4, "Iter    :        ");
-	mlx_string_put(env->mlx, env->win, 945, 430, 0x165AA4, iter);
-	mlx_string_put(env->mlx, env->win, 815, 470, 0x165AA4, "Motion  :        ");
+	mlx_string_put(env->mlx, env->win, 815, 350, 0x165AA4, "Motion  :   Click");
+	mlx_string_put(env->mlx, env->win, 813, 420, 0x165AA4, "    PARAMETERS   ");
+	mlx_string_put(env->mlx, env->win, 815, 470, 0x165AA4, "Iter    :        ");
+	mlx_string_put(env->mlx, env->win, 945, 470, 0x165AA4, iter);
+	mlx_string_put(env->mlx, env->win, 815, 510, 0x165AA4, "Motion  :        ");
 	if (env->p->motion == 0)
-		mlx_string_put(env->mlx, env->win, 945, 470, 0x165AA4, "off");
+		mlx_string_put(env->mlx, env->win, 945, 510, 0x165AA4, "off");
 	else
-		mlx_string_put(env->mlx, env->win, 945, 470, 0x165AA4, "on");
+		mlx_string_put(env->mlx, env->win, 945, 510, 0x165AA4, "on");
 }
 
 void		menu(t_env *env)
