@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:20:52 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 00:13:28 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 13:48:55 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static double	modify_moove(t_env *env)
 {
-	static double i = 0.2;
+	static double	i = 0.2;
 
 	if (env->p->zoom <= 100)
 		i = 0.2;
@@ -29,9 +29,9 @@ static double	modify_moove(t_env *env)
 	return (i);
 }
 
-void	moove(int keycode, t_env *env)
+void			moove(int keycode, t_env *env)
 {
-	double i;
+	double	i;
 
 	i = modify_moove(env);
 	if (keycode == LEFT)
@@ -44,7 +44,7 @@ void	moove(int keycode, t_env *env)
 		env->p->y1 -= i;
 }
 
-int		key_funct(int keycode, t_env *env)
+int				key_funct(int keycode, t_env *env)
 {
 	if (env->mlx == NULL)
 		return (0);
@@ -55,16 +55,13 @@ int		key_funct(int keycode, t_env *env)
 	if (keycode == MORE_COLOR || keycode == LESS_COLOR)
 		color(keycode, env);
 	if (keycode == LEFT || keycode == RIGHT || keycode == UP\
-	|| keycode == DOWN)
+			|| keycode == DOWN)
 		moove(keycode, env);
 	if (keycode == T1 || keycode == T2 || keycode == T3 || keycode == T4 || \
-	keycode == T5)
+			keycode == T5)
 		theme(keycode, env);
 	if (keycode == ORIGIN)
 		origin(keycode, env);
-	if (keycode == SPACE)
-		menu(env);
-	mlx_clear_window(env->mlx, env->win);
 	select_fractals(env);
 	return (0);
 }

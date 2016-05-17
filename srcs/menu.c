@@ -5,63 +5,66 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/04/28 16:55:05 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 19:10:25 by vquesnel         ###   ########.fr       */
+/*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
+/*   Updated: 2016/05/17 13:49:36 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static void	signature(void *mlx, void *win)
+static void	title(t_env *env)
 {
-	mlx_string_put(mlx, win, 395, 612, 0xFFFF00, "XXXX                     ");
-	mlx_string_put(mlx, win, 395, 622, 0xFFFF00, "X            XXXXX      ");
-	mlx_string_put(mlx, win, 395, 632, 0xFFFF00, "XX             X     X   ");
-	mlx_string_put(mlx, win, 395, 642, 0xFFFF00, "X XXX XXX  XXX X XXX X   ");
-	mlx_string_put(mlx, win, 395, 652, 0xFFFF00, "X X   X X  X   X X X X   ");
-	mlx_string_put(mlx, win, 395, 662, 0xFFFF00, "X X   XXXX XXX X XXX XXX ");
-	mlx_string_put(mlx, win, 404, 682, 0xFFFF00, "X   X XXXX X   X X  X");
-	mlx_string_put(mlx, win, 404, 692, 0xFFFF00, "XX XX X    XX  X X  X");
-	mlx_string_put(mlx, win, 404, 702, 0xFFFF00, "X X X XXXX X X X X  X");
-	mlx_string_put(mlx, win, 404, 712, 0xFFFF00, "X   X X    X  XX X  X");
-	mlx_string_put(mlx, win, 404, 722, 0xFFFF00, "X   X XXXX X   X XXXX");
-	mlx_string_put(mlx, win, 404, 746, 0xFF0000, "       vquesnel");
-	mlx_string_put(mlx, win, 404, 762, 0xFF0000, "       kwiessle");
-	mlx_string_put(mlx, win, 404, 791, 0xFFFF00, "zdteam 42        2016");
-	mlx_string_put(mlx, win, 404, 791, 0xFF0000, "      @  school");
+	char	*title;
+	int		i;
+
+	i = 0;
+	title = malloc(ft_strlen(env->name) + 1);
+	while (env->name[i])
+	{
+		title[i] = ft_toupper(env->name[i]);
+		i++;
+	}
+	title[i] = '\0';
+	if (ft_strcmp(title, "JULIA") == 0)
+		mlx_string_put(env->mlx, env->win, 865, 20, 0x165AA4, title);
+	else
+		mlx_string_put(env->mlx, env->win, 850, 20, 0x165AA4, title);
 }
 
-static void	options(void *mlx, void *win)
+static void	commands(t_env *env)
 {
-	signature(mlx, win);
-	mlx_string_put(mlx, win, 700, 676, 0x00FF00, "moove    ");
-	mlx_string_put(mlx, win, 700, 676, 0xFF0000, "         :  arrow");
-	mlx_string_put(mlx, win, 700, 696, 0xFF0000, "         :  scroll");
-	mlx_string_put(mlx, win, 700, 696, 0x00FF00, "zoom      ");
-	mlx_string_put(mlx, win, 700, 716, 0xFF0000, "         :   esc");
-	mlx_string_put(mlx, win, 700, 716, 0x00FF00, "exit     ");
-	mlx_string_put(mlx, win, 700, 736, 0xFF0000, "         :   tild");
-	mlx_string_put(mlx, win, 700, 736, 0x00FF00, "origin   ");
-	mlx_string_put(mlx, win, 168, 676, 0xFF0000, "          :    a/s");
-	mlx_string_put(mlx, win, 168, 676, 0x00FF00, "iter+/-    ");
-	mlx_string_put(mlx, win, 168, 696, 0xFF0000, "          : leftclick");
-	mlx_string_put(mlx, win, 168, 696, 0x00FF00, "parameters");
-	mlx_string_put(mlx, win, 168, 716, 0xFF0000, "          :    +/-");
-	mlx_string_put(mlx, win, 168, 716, 0x00FF00, "color+/- ");
-	mlx_string_put(mlx, win, 168, 736, 0xFF0000, "          :   1 to 5");
-	mlx_string_put(mlx, win, 168, 736, 0x00FF00, "themes   ");
+	char	*iter;
+
+	iter = ft_itoa(env->p->iter);
+	mlx_string_put(env->mlx, env->win, 815, 70, 0x165AA4, "Moove   :  Arrows");
+	mlx_string_put(env->mlx, env->win, 815, 110, 0x165AA4, "Iter +  :    s  ");
+	mlx_string_put(env->mlx, env->win, 815, 150, 0x165AA4, "Iter -  :    a  ");
+	mlx_string_put(env->mlx, env->win, 815, 190, 0x165AA4, "Reset   :   tild ");
+	mlx_string_put(env->mlx, env->win, 815, 230, 0x165AA4, "Themes  :  1 to 5");
+	mlx_string_put(env->mlx, env->win, 815, 270, 0x165AA4, "Color + :    +  ");
+	mlx_string_put(env->mlx, env->win, 815, 310, 0x165AA4, "Color - :    -  ");
+	mlx_string_put(env->mlx, env->win, 813, 380, 0x165AA4, "    PARAMETERS   ");
+	mlx_string_put(env->mlx, env->win, 815, 430, 0x165AA4, "Iter    :        ");
+	mlx_string_put(env->mlx, env->win, 945, 430, 0x165AA4, iter);
+	mlx_string_put(env->mlx, env->win, 815, 470, 0x165AA4, "Motion  :        ");
+	if (env->p->motion == 0)
+		mlx_string_put(env->mlx, env->win, 945, 470, 0x165AA4, "off");
+	else
+		mlx_string_put(env->mlx, env->win, 945, 470, 0x165AA4, "on");
 }
 
-int			menu(t_env *env)
+void		menu(t_env *env)
 {
-	void	*mlx;
-	void	*win;
+	int		x;
+	int		y;
 
-	mlx = env->mlx;
-	win = env->win;
-	options(mlx, win);
-	left_wing(env);
-	right_wing(env);
-	body(env);
-	return (0);
+	x = 800;
+	y = 0;
+	while (y <= Y_SIZE)
+	{
+		mlx_pixel_put(env->mlx, env->win, x, y, 0x165AA4);
+		y++;
+	}
+	title(env);
+	commands(env);
 }

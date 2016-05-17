@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:12:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 10:30:10 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 11:32:09 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # define TRUE 1
 # define FALSE 0
-# define X_SIZE 1024
-# define Y_SIZE 850
+# define X_SIZE 800
+# define Y_SIZE 800
 
 /*
 ** KEYCODE

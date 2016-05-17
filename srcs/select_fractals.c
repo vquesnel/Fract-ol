@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:53:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 13:37:08 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/17 13:42:41 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void		select_fractals(t_env *env)
 		draw_chameleon(env);
 	else if (ft_strcmp(env->name, "tricorn") == 0)
 		draw_tricorn(env);
+	mlx_clear_window(env->mlx, env->win);
+	menu(env);
 	mlx_put_image_to_window(env->mlx, env->win, env->img->img, 0, 0);
 	mlx_mouse_hook(env->win, mouse_hook, env);
 	mlx_hook(env->win, 6, 1 << 8, motion_juliaandco, env);
