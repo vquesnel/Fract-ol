@@ -6,11 +6,12 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/18 16:04:44 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/18 16:45:51 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
 
 static void	title(t_env *env)
 {
@@ -25,8 +26,12 @@ static void	title(t_env *env)
 		i++;
 	}
 	title[i] = '\0';
-	if (ft_strcmp(title, "JULIA") == 0)
-		mlx_string_put(env->mlx, env->win, 865, 20, 0xC1500D, title);
+	if (ft_strlen(env->name) == 5)
+		mlx_string_put(env->mlx, env->win, 875, 20, 0xC1500D, title);
+	else if (ft_strlen(env->name) == 7)
+		mlx_string_put(env->mlx, env->win, 866, 20, 0xC1500D, title);
+	else if (ft_strlen(env->name) == 9)
+		mlx_string_put(env->mlx, env->win, 853, 20, 0xC1500D, title);
 	else
 		mlx_string_put(env->mlx, env->win, 850, 20, 0xC1500D, title);
 }
@@ -46,16 +51,16 @@ static void	commands(t_env *env)
 	mlx_string_put(env->mlx, env->win, 815, 270, 0x165AA4, "Color + :    +  ");
 	mlx_string_put(env->mlx, env->win, 815, 310, 0x165AA4, "Color - :    -  ");
 	mlx_string_put(env->mlx, env->win, 815, 350, 0x165AA4, "Motion  :   Click");
-	mlx_string_put(env->mlx, env->win, 813, 420, 0xC1500D, "    PARAMETERS   ");
-	mlx_string_put(env->mlx, env->win, 815, 470, 0x165AA4, "Iter    :        ");
-	mlx_string_put(env->mlx, env->win, 935, 470, 0x165AA4, iter);
-	mlx_string_put(env->mlx, env->win, 815, 510, 0x165AA4, "Motion  :        ");
+	mlx_string_put(env->mlx, env->win, 813, 620, 0xC1500D, "    PARAMETERS   ");
+	mlx_string_put(env->mlx, env->win, 815, 670, 0x165AA4, "Iter    :        ");
+	mlx_string_put(env->mlx, env->win, 935, 670, 0x165AA4, iter);
+	mlx_string_put(env->mlx, env->win, 815, 710, 0x165AA4, "Motion  :        ");
 	if (env->p->motion == 0)
-		mlx_string_put(env->mlx, env->win, 935, 510, 0x165AA4, "off");
+		mlx_string_put(env->mlx, env->win, 935, 710, 0x990000, "off");
 	else
-		mlx_string_put(env->mlx, env->win, 935, 510, 0x165AA4, "on");
-	mlx_string_put(env->mlx, env->win, 815, 550, 0x165AA4, "Zoom    :        ");
-	mlx_string_put(env->mlx, env->win, 935, 550, 0x165AA4, zoom);
+		mlx_string_put(env->mlx, env->win, 935, 710, 0x10A943, "on");
+	mlx_string_put(env->mlx, env->win, 815, 750, 0x165AA4, "Zoom    :        ");
+	mlx_string_put(env->mlx, env->win, 935, 750, 0x165AA4, zoom);
 }
 
 void		menu(t_env *env)
