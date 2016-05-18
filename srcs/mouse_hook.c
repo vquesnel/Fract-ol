@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 13:41:45 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/18 16:05:34 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ int		motion_juliaandco(int x, int y, t_env *env)
 			if (x > 0 && x < X_SIZE && y > 0 && y < Y_SIZE)
 			{
 				if (x < X_SIZE / 2 && y < Y_SIZE / 2)
-					env->p->c_r += 0.01;
+					env->p->c_r += 0.05;
 				if (x > X_SIZE / 2 && y < Y_SIZE / 2)
-					env->p->c_r -= 0.01;
+					env->p->c_r -= 0.05;
 				if (x < X_SIZE / 2 && y > Y_SIZE / 2)
-					env->p->c_i += 0.01;
+					env->p->c_i += 0.05;
 				if (x > X_SIZE / 2 && y > Y_SIZE / 2)
-					env->p->c_i -= 0.01;
+					env->p->c_i -= 0.05;
 			}
 		}
 		select_fractals(env);
