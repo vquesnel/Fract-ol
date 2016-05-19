@@ -6,12 +6,11 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/18 16:45:51 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/19 12:57:44 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
 
 static void	title(t_env *env)
 {
