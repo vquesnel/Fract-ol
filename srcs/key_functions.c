@@ -6,7 +6,7 @@
 /*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 15:11:49 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/19 12:54:39 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	theme(int keycode, t_env *env)
 	if (keycode == T2)
 		env->p->col = 0xEF12F9;
 	if (keycode == T3)
-		env->p->col = 0x0000FF;
+		env->p->col = 0x00F6D1;
 	if (keycode == T4)
 		env->p->col = 0x10007ED;
 	if (keycode == T5)
