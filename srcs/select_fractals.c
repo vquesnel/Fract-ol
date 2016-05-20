@@ -6,11 +6,17 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:53:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/19 12:57:14 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/20 15:26:10 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+static int	close_win(t_env *e)
+{
+	free(e);
+	exit(EXIT_SUCCESS);
+}
 
 void		select_fractals(t_env *env)
 {
@@ -32,5 +38,6 @@ void		select_fractals(t_env *env)
 	mlx_mouse_hook(env->win, mouse_hook, env);
 	mlx_hook(env->win, 6, 1 << 8, motion_juliaandco, env);
 	mlx_hook(env->win, 2, 3, key_funct, env);
+	mlx_hook(env->win, 17, 1L << 17, close_win, env);
 	mlx_loop(env->mlx);
 }
