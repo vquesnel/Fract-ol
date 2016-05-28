@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:53:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/25 23:19:11 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/29 01:08:40 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,20 @@ void		select_fractals(t_env *env)
 {
 	if (ft_strcmp(env->name, "julia") == 0)
 		draw_julia(env);
-	else if (ft_strcmp(env->name, "mandelbrot") == 0)
+	if (ft_strcmp(env->name, "mandelbrot") == 0)
 		draw_mandelbrot(env);
-	else if (ft_strcmp(env->name, "bship") == 0)
+	if (ft_strcmp(env->name, "bship") == 0)
 		draw_bship(env);
-	else if (ft_strcmp(env->name, "sword") == 0)
+	if (ft_strcmp(env->name, "sword") == 0)
 		draw_sword(env);
-	else if (ft_strcmp(env->name, "chameleon") == 0)
+	if (ft_strcmp(env->name, "chameleon") == 0)
 		draw_chameleon(env);
-	else if (ft_strcmp(env->name, "tricorn") == 0)
+	if (ft_strcmp(env->name, "tricorn") == 0)
 		draw_tricorn(env);
+	if (ft_strcmp(env->name, "celtic") == 0)
+		draw_celtic(env);
+	if (ft_strcmp(env->name, "test") == 0)
+		draw_test(env);
 	mlx_clear_window(env->mlx, env->win);
 	menu(env);
 	mlx_put_image_to_window(env->mlx, env->win, env->img->img, 0, 0);

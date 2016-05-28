@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/18 16:05:34 by vquesnel         ###   ########.fr       */
+/*   Updated: 2016/05/29 01:11:44 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		mouse_hook(int button, int x, int y, t_env *env)
 int		motion_juliaandco(int x, int y, t_env *env)
 {
 	if (!ft_strcmp(env->name, "julia") || !ft_strcmp(env->name, "chameleon") \
-			|| !ft_strcmp(env->name, "sword"))
+			|| !ft_strcmp(env->name, "sword") || !ft_strcmp(env->name, "test"))
 	{
 		if (env->p->motion % 2)
 		{
