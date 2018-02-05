@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 10:53:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/17 12:43:01 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/05 16:01:32 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct	s_param
 	double		x2;
 	double		y1;
 	double		y2;
+	double		x_real;
+	double		y_real;
 	long double	zoom;
 	double		c_r;
 	double		c_i;
@@ -50,5 +52,12 @@ typedef struct	s_env
 	t_img		*img;
 	t_param		*p;
 }				t_env;
+
+typedef struct	s_threads
+{
+	int			begin;
+	int			end;
+	t_env		*e;
+}				t_threads;
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/26 13:35:37 by vquesnel          #+#    #+#              #
-#*   Updated: 2016/05/29 00:56:06 by vquesnel         ###   ########.fr       *#
+#    Updated: 2018/02/05 17:28:32 by vquesnel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS= srcs/init_img.c srcs/init_env.c srcs/select_fractals.c srcs/main.c \
 
 OBJS= $(SRCS:.c=.o)
 INCLUDES= -I libft/includes -I includes -I mlx/
-LIBS= -L libft/ -lft -L mlx/ -lmlx -lm
+LIBS= -L libft/ -lft -L mlx/ -lmlx  -lpthread
 FLAGS= -Wall -Wextra -Werror -O3 -Ofast -O2 -g
 FRAMEWORK= -framework AppKit -framework OpenGL
 

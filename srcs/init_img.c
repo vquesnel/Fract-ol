@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/29 14:26:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/12 14:20:29 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/05 13:00:49 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,6 @@ void		pixel_to_image(t_env *env, int x, int y, int color)
 
 	octet = env->img->bpp / 8;
 	if (x > 0 && x < X_SIZE && y > 0 && y < Y_SIZE)
-		ft_memcpy(&env->img->data[octet * (x + env->img->sizeline / \
+		ft_memcpy(&env->img->data[octet * (x + env->img->sizeline /
 					octet * y)], &color, octet);
-}
-
-void		set_pixel_to_image(t_env *e)
-{
-	if (e->p->i == e->p->iter)
-		pixel_to_image(e, e->p->x, e->p->y, 0);
-	else
-		pixel_to_image(e, e->p->x, e->p->y, e->p->col * e->p->i / e->p->iter);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   menu.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/19 12:57:44 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/05 17:20:55 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,21 @@ static void	title(t_env *env)
 		mlx_string_put(env->mlx, env->win, 853, 20, 0xC1500D, title);
 	else
 		mlx_string_put(env->mlx, env->win, 850, 20, 0xC1500D, title);
+	free(title);
+}
+
+static void	handle_motion(t_env *env)
+{
+	if (!ft_strcmp(env->name, "julia") || !ft_strcmp(env->name, "chameleon") ||
+		!ft_strcmp(env->name, "sword") || !ft_strcmp(env->name, "test"))
+	{
+		if (env->p->motion == 0)
+			mlx_string_put(env->mlx, env->win, 935, 710, 0x990000, "off");
+		else
+			mlx_string_put(env->mlx, env->win, 935, 710, 0x10A943, "on");
+	}
+	else
+		mlx_string_put(env->mlx, env->win, 910, 710, 0x990000, "unavailable");
 }
 
 static void	commands(t_env *env)
@@ -54,12 +69,11 @@ static void	commands(t_env *env)
 	mlx_string_put(env->mlx, env->win, 815, 670, 0x165AA4, "Iter    :        ");
 	mlx_string_put(env->mlx, env->win, 935, 670, 0x165AA4, iter);
 	mlx_string_put(env->mlx, env->win, 815, 710, 0x165AA4, "Motion  :        ");
-	if (env->p->motion == 0)
-		mlx_string_put(env->mlx, env->win, 935, 710, 0x990000, "off");
-	else
-		mlx_string_put(env->mlx, env->win, 935, 710, 0x10A943, "on");
+	handle_motion(env);
 	mlx_string_put(env->mlx, env->win, 815, 750, 0x165AA4, "Zoom    :        ");
 	mlx_string_put(env->mlx, env->win, 935, 750, 0x165AA4, zoom);
+	free(zoom);
+	free(iter);
 }
 
 void		menu(t_env *env)

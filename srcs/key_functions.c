@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquesnel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:28:38 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/19 12:54:39 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/05 17:36:52 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	iter(int keycode, t_env *env)
 void	theme(int keycode, t_env *env)
 {
 	if (keycode == T1)
-		env->p->col = 0xFFFFFF;
+		env->p->col = 0x387048;
 	if (keycode == T2)
-		env->p->col = 0xEF12F9;
+		env->p->col = 0xD406F4;
 	if (keycode == T3)
-		env->p->col = 0x00F6D1;
+		env->p->col = 0x039B01;
 	if (keycode == T4)
-		env->p->col = 0x10007ED;
+		env->p->col = 0x0620F4;
 	if (keycode == T5)
 		env->p->col = 0x10017C9;
 }
@@ -49,8 +49,14 @@ void	origin(int keycode, t_env *env)
 		if (!ft_strcmp(env->name, "julia") || \
 				!ft_strcmp(env->name, "chameleon") ||\
 				!ft_strcmp(env->name, "sword"))
+		{
+			free(env->p);
 			env->p = init_julia();
+		}
 		else
+		{
+			free(env->p);
 			env->p = init_mandelbrot();
+		}
 	}
 }

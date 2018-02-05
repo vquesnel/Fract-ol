@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:55:26 by vquesnel          #+#    #+#             */
-/*   Updated: 2016/05/29 01:10:20 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/05 16:02:23 by vquesnel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "mlx.h"
 # include <math.h>
 # include <stdio.h>
+# include <pthread.h>
 
 /*
 ** INITILALIZE LIST FUNCTIONS
@@ -35,21 +36,21 @@ t_param	*init_bship(void);
 */
 
 void	pixel_to_image(t_env *env, int x, int y, int color);
-void	set_pixel_to_image(t_env *env);
 
 /*
 ** DRAWING FUNCTIONS
 */
-
-void	select_fractals(t_env *env);
-void	draw_mandelbrot(t_env *env);
-void	draw_julia(t_env *env);
-void	draw_bship(t_env *env);
-void	draw_sword(t_env *e);
-void	draw_chameleon(t_env *e);
-void	draw_tricorn(t_env *e);
-void	draw_celtic(t_env *e);
-void	draw_test(t_env *e);
+int		select_fractals(t_env *env);
+void	choose_fracals(t_env *env, pthread_t *t, t_threads *o, int i);
+void	ft_print_threads(t_env *env);
+void	draw_mandelbrot(t_threads *t);
+void	draw_julia(t_threads *t);
+void	draw_bship(t_threads *t);
+void	draw_sword(t_threads *t);
+void	draw_chameleon(t_threads *t);
+void	draw_tricorn(t_threads *t);
+void	draw_celtic(t_threads *t);
+void	draw_test(t_threads *t);
 
 /*
 ** MOUSE HOOK FUNCTIONS
