@@ -1,7 +1,7 @@
 # Fract-ol
 
 School's project made with the mlx in order to generate fractals
-Final grade : 117/100
+Final grade : 125/100
 
 # Key events
 

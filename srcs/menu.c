@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/02/09 11:39:45 by victor           ###   ########.fr       */
+/*   Updated: 2018/02/09 12:05:08 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static void	title(t_env *env)
 		i++;
 	}
 	title[i] = '\0';
-	printf("%zu\n", ft_strlen(env->name));
 	if (ft_strlen(env->name) == 4)
 		mlx_string_put(env->mlx, env->win, 871, 20, 0xC1500D, title);
 	else if (ft_strlen(env->name) == 5)
@@ -68,6 +67,7 @@ static void	commands(t_env *env)
 	mlx_string_put(env->mlx, env->win, 815, 270, 0x165AA4, "Color + :    +  ");
 	mlx_string_put(env->mlx, env->win, 815, 310, 0x165AA4, "Color - :    -  ");
 	mlx_string_put(env->mlx, env->win, 815, 350, 0x165AA4, "Motion  :   Click");
+	mlx_string_put(env->mlx, env->win, 815, 390, 0x165AA4, "Change fractal : Q/W ");
 	mlx_string_put(env->mlx, env->win, 813, 620, 0xC1500D, "    PARAMETERS   ");
 	mlx_string_put(env->mlx, env->win, 815, 670, 0x165AA4, "Iter    :        ");
 	mlx_string_put(env->mlx, env->win, 935, 670, 0x165AA4, iter);
