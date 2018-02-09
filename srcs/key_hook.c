@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 14:20:52 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/02/05 17:08:35 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:37:04 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,29 @@ static void		board_zoom(int keycode, t_env *env)
 	env->p->y1 = env->p->y_real - (env->p->y / env->p->zoom);
 }
 
+static void 	change_fractals(int keycode, t_env *env)
+{
+	static int	i;
+	static char	*fracts[] = {"julia", "mandelbrot", "celtic", "test", "sword",
+	 "tricorn", "chameleon", "bship"};
+	if (keycode == Q && i > 0)
+		env->name = fracts[--i];
+	else if (keycode == Q && i == 0)
+		env->name = fracts[i = 7];
+	else if (keycode == W && i < 7)
+		env->name = fracts[++i];
+	else
+		env->name = fracts[i = 0];
+	free(env->p);
+	if (!ft_strcmp(env->name, "julia") || !ft_strcmp(env->name, "sword") || \
+		!ft_strcmp(env->name, "chameleon") || !ft_strcmp(env->name, "test"))
+		env->p = init_julia();
+	else if (!(ft_strcmp(env->name, "mandelbrot")) || \
+		!ft_strcmp(env->name, "bship") || !ft_strcmp(env->name, "tricorn") \
+		|| !ft_strcmp(env->name, "celtic"))
+		env->p = init_mandelbrot();
+}
+
 int				key_funct(int keycode, t_env *env)
 {
 	if (env->mlx == NULL)
@@ -77,5 +100,8 @@ int				key_funct(int keycode, t_env *env)
 		origin(keycode, env);
 	if (keycode == ZOOMUP || keycode == ZOOMDOWN)
 		board_zoom(keycode, env);
+	if (keycode == Q || keycode == W)
+		change_fractals(keycode, env);
+	select_fractals(env);
 	return (0);
 }

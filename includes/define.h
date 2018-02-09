@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/03 16:12:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/02/05 17:30:28 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:15:15 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@
 # define SPACE 49
 # define ZOOMUP 116
 # define ZOOMDOWN 121
+# define Q 12
+# define W 13
 
 /*
 ** MOUSECODE

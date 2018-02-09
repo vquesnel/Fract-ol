@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 15:30:00 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/02/05 17:22:14 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:10:31 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		mouse_hook(int button, int x, int y, t_env *env)
 		env->p->y1 = env->p->y_real - (y / env->p->zoom);
 		if (button == LEFTCLICK)
 			env->p->motion = (env->p->motion == 0) ? 1 : 0;
+		select_fractals(env);
 	}
 	return (0);
 }
@@ -51,6 +52,7 @@ int		motion_juliaandco(int x, int y, t_env *env)
 		}
 		env->p->x = x;
 		env->p->y = y;
+		select_fractals(env);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/17 13:49:02 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/02/05 17:20:55 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:39:45 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ static void	title(t_env *env)
 		i++;
 	}
 	title[i] = '\0';
-	if (ft_strlen(env->name) == 5)
+	printf("%zu\n", ft_strlen(env->name));
+	if (ft_strlen(env->name) == 4)
+		mlx_string_put(env->mlx, env->win, 871, 20, 0xC1500D, title);
+	else if (ft_strlen(env->name) == 5)
 		mlx_string_put(env->mlx, env->win, 875, 20, 0xC1500D, title);
 	else if (ft_strlen(env->name) == 7)
 		mlx_string_put(env->mlx, env->win, 866, 20, 0xC1500D, title);

@@ -6,7 +6,7 @@
 /*   By: vquesnel <vquesnel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 11:50:15 by vquesnel          #+#    #+#             */
-/*   Updated: 2018/02/05 17:08:49 by vquesnel         ###   ########.fr       */
+/*   Updated: 2018/02/09 11:10:59 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,11 @@ chameleon/test/celtic]");
 			!ft_strcmp(av[1], "celtic") || !ft_strcmp(av[1], "test"))
 	{
 		env = init_env(av[1]);
+		select_fractals(env);
 		mlx_hook(env->win, 6, 1 << 8, motion_juliaandco, env);
 		mlx_hook(env->win, 2, 3, key_funct, env);
 		mlx_hook(env->win, 17, 1L << 17, close_win, env);
 		mlx_mouse_hook(env->win, mouse_hook, env);
-		mlx_loop_hook(env->mlx, select_fractals, env);
 		mlx_loop(env->mlx);
 	}
 	else
